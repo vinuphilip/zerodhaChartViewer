@@ -9,3 +9,5 @@
 ## You can customize your scripts to be viewed by updating the link array and customize your delay between charts by altering your sleep.
 
 ## This is written for chrome hence its expected that you have chrome and selenium installed on your machine
+
+
