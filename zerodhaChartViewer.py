@@ -9,7 +9,7 @@ import time
 
 loginid = "Put your zerodha user id here"
 password = "Put your zerodha password here"
-# write your PIN
+# write your Zerodha Token PIN below IF IT IS static
 loginpin = "Put your zerodha PIN here"
 
 
@@ -23,9 +23,15 @@ def loginkite():
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"userid"))).send_keys(loginid)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"password"))).send_keys(password)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//*[@type='submit']"))).click()
-#    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"pin"))).send_keys(loginpin)          // if the PIN is static you can enter the pin and uncomment these 2 lines
-#    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//*[@type='submit']"))).click()   // to ensure that even your authentication with PIN is also seamless . If 
-#													     // not then comment these 2 lines and let it prompt you to enter PIN
+    
+    
+#   if the PIN is static you can enter the pin and uncomment these 2 lines to ensure that even your authentication with PIN is also seamless . If
+#   not then comment these 2 lines and let it prompt you to enter PIN    
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"pin"))).send_keys(loginpin)          
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//*[@type='submit']"))).click()     
+
+
+
 loginkite()
 time.sleep(10)
 
